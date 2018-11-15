@@ -1,12 +1,14 @@
 os: osx
 
-language: csharp
 rvm:
   - 2.1.2
-install:
-  - ./travis/install.sh
-script:
-  - ./travis/test.sh
+
+env:
+  - UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache"
+
+cache:
+  directories:
+    - $UNITY_DOWNLOAD_CACHE
 
 git:
   depth: 1
@@ -16,3 +18,13 @@ branches:
   only:
     - master
     - stable
+
+before_install:
+  - rvm get stable
+  - chmod a+x ./travis/*.sh
+
+install:
+  - ./travis/install.sh
+
+script:
+  - ./travis/test.sh
