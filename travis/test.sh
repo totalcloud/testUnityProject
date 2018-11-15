@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/sh -x
 
 projectPath=$(pwd)/$1
 logFile=$(pwd)/$1_test.log
@@ -17,6 +17,13 @@ $UnityPath -batchmode -silent-crashes \
 -testResults $testResults
 
 # add code to understand what build means ?
+failTest=$(cat $testResults | grep "<failure>")
+
+if [[ $(failTest) ]]; then
+	ERROR_CODE=1;
+fi
+
+cat $testResults
 
 echo "Finishing with code $ERROR_CODE"
 exit $ERROR_CODE
