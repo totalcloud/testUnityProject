@@ -1,8 +1,5 @@
 os: osx
 
-rvm:
-  - 2.1.2
-
 env:
   - UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache"
 
@@ -20,7 +17,6 @@ branches:
     - stable
 
 before_install:
-  - rvm get stable
   - chmod a+x ./travis/*.sh
 
 install:
