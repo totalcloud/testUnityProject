@@ -6,7 +6,7 @@ testResults=$(pwd)/$1_test_result.xml
 
 UnityPath="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
 
-$UnityPath -batchmode -silent-crashes \
+$UnityPath -batchmode -nographics -silent-crashes \
 -logFile $logFile \
 -projectPath "$projectPath" \
 -runTests -testPlatform playmode \
