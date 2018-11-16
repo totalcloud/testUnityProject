@@ -25,3 +25,9 @@ install:
 
 script:
   - ./travis/test.sh
+
+after_failure:
+  - cat _test_result.xml
+
+after_script:
+  - cat _test.log
