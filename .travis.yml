@@ -14,7 +14,7 @@ git:
 branches:
   only:
     - master
-    - stable
+    - patcher
 
 before_install:
   - chmod a+x ./travis/*.sh
