@@ -1,6 +1,6 @@
-﻿using UnityEngine.TestTools;
+﻿using System.Collections;
 using NUnit.Framework;
-using System.Collections;
+using UnityEngine.TestTools;
 
 public class SimpleTest {
 
@@ -16,7 +16,7 @@ public class SimpleTest {
 	public IEnumerator simpleTestWithEnumeratorPasses() {
 		// Use the Assert class to test conditions.
 		// yield to skip a frame
-		Assert.AreEqual("ok", "ok");
+		Assert.AreEqual("ok", "notOk");
 		yield return null;
 	}
 }
