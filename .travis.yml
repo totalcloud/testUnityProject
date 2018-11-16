@@ -24,10 +24,13 @@ install:
   - ./travis/install.sh
 
 script:
+  - ./travis/test.sh subproject
   - ./travis/test.sh
 
 after_failure:
+  - cat subproject_test_result.xml
   - cat _test_result.xml
 
 after_script:
+  - cat subproject_test.log
   - cat _test.log
