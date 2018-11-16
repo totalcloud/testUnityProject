@@ -1,6 +1,6 @@
-﻿using UnityEngine.TestTools;
+﻿using System.Collections;
 using NUnit.Framework;
-using System.Collections;
+using UnityEngine.TestTools;
 
 public class SimpleTest {
 
